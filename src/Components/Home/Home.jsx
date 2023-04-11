@@ -29,20 +29,24 @@ const Home = () => {
         </div>
 
         {/* job categories */}
-        <div>
-          <div className="text-center">
-            <h1 className="font-semibold">Job Category List</h1>
+        <div className="mt-16">
+          <div className="text-center ">
+            <h1 className="font-semibold mb-5">Job Category List</h1>
             <p>
               Explore thousands of job opportunities with all the information
               you need. Its your future
             </p>
           </div>
-          <div className='flex justify-evenly mx-auto'>
+          <div className="flex justify-evenly mx-auto mt-8">
             {categories.map((category, index) => (
-              <div className='w-[15%]' key={index}>
-                    <img className='w-10 bg-gray-100 p-2' src={category.icon} alt="" />
-                    <h4>{category.name}</h4>
-                    <p>{category.jobs_available}</p>
+              <div className="w-[20%]  p-9 rounded-lg bg-gray-50" key={index}>
+                <img
+                  className="w-16 bg-gray-100 p-2 rounded-lg"
+                  src={category.icon}
+                  alt=""
+                />
+                <h4 className="font-semibold">{category.name}</h4>
+                <p>{category.jobs_available}</p>
               </div>
             ))}
           </div>

@@ -3,22 +3,22 @@
     {
       "name": "Account & Finance",
       "icon": "https://cdn-icons-png.flaticon.com/512/3490/3490161.png",
-      "jobs_available": 102
+      "jobs_available": "102 jobs are available"
     },
     {
       "name": "Creative Design",
       "icon": "https://cdn-icons-png.flaticon.com/512/2857/2857569.png",
-      "jobs_available": 75
+      "jobs_available": "75 jobs are available"
     },
     {
       "name": "Marketing and Sales",
       "icon": "https://cdn-icons-png.flaticon.com/512/3271/3271314.png",
-      "jobs_available": 120
+      "jobs_available": "120 jobs are available"
     },
     {
       "name": "Engineering Job",
       "icon": "https://cdn-icons-png.flaticon.com/512/1995/1995630.png",
-      "jobs_available": 95
+      "jobs_available": "95 jobs are available"
     }
   ]
 }
