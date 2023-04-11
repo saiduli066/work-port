@@ -1,11 +1,20 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import logo from '../../assets/All Images/P3OLGJ1 copy 1.png';
+import {LockOpenIcon} from "@heroicons/react/24/solid";
 
 const Home = () => {
-    const fetchedCategories = useLoaderData();
+    // const {fetchedCategories,fetchedJobs} = useLoaderData();
+    // const { categories } = fetchedCategories;
+    // // console.log(categories);
+
+    // const { jobs } = fetchedJobs;
+    // console.log(jobs);
+    const { fetchedCategories, fetchedJobs } = useLoaderData();
     const { categories } = fetchedCategories;
-    // console.log(categories);
+    console.log(categories);
+    const { jobs } = fetchedJobs;
+    console.log(jobs);
 
     return (
       <>
@@ -47,6 +56,36 @@ const Home = () => {
                 />
                 <h4 className="font-semibold">{category.name}</h4>
                 <p>{category.jobs_available}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* featured jobs section */}
+
+        <div>
+          <h1 className="font-semibold text-center">Featured Jobs</h1>
+          <p className="text-center">
+            Explore thousands of job opportunities with all the information you
+            need. Its your future
+          </p>
+          <div className="grid grid-cols-2 mx-auto">
+            {jobs.map((job) => (
+              <div className="mx-auto" key={job.id}>
+                <img className="w-32" src={job.company_logo} alt="" />
+                <h4>{job.job_title}</h4>
+                <p>{job.company_name}</p>
+                <div className="flex">
+                  <button>{job.remote_or_onsite}</button>
+                  <button>{job.fulltime_or_parttime}</button>
+                </div>
+                <div className="flex">
+                  <p>
+                    <LockOpenIcon /> {job.location}
+                  </p>
+                  <p>Salary: {job.salary}</p>
+                </div>
+                <button className="my-button">View Details</button>
               </div>
             ))}
           </div>
