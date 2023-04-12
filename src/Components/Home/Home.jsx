@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import logo from '../../assets/All Images/P3OLGJ1 copy 1.png';
-import {LockOpenIcon} from "@heroicons/react/24/solid";
+import {CurrencyDollarIcon, MapPinIcon} from "@heroicons/react/24/solid";
 
 const Home = () => {
     // const {fetchedCategories,fetchedJobs} = useLoaderData();
@@ -65,29 +65,43 @@ const Home = () => {
 
         <div>
           <h1 className="font-semibold text-center">Featured Jobs</h1>
-          <p className="text-center">
+          <p className="text-center mb-10">
             Explore thousands of job opportunities with all the information you
             need. Its your future
           </p>
-          <div className="grid grid-cols-2 mx-auto">
+          <div className="grid grid-cols-2 gap-7 w-full  ustify-items-center items-center mx-auto">
             {jobs.map((job) => (
-              <div className="mx-auto" key={job.id}>
-                <img className="w-32" src={job.company_logo} alt="" />
-                <h4>{job.job_title}</h4>
-                <p>{job.company_name}</p>
-                <div className="flex">
-                  <button>{job.remote_or_onsite}</button>
-                  <button>{job.fulltime_or_parttime}</button>
+              <div
+                className="mx-auto border w-[65%] border-gray-200 rounded-lg p-10"
+                key={job.id}
+              >
+                <img className="w-28 h-16" src={job.company_logo} alt="" />
+                <h4 className="text-xl mb-5">{job.job_title}</h4>
+                <p className="font-medium text-gray-500 mb-5">
+                  {job.company_name}
+                </p>
+                <div className="flex gap-5 mb-5">
+                  <button className="border-sky-300">
+                    {job.remote_or_onsite}
+                  </button>
+                  <button className="border-sky-300">
+                    {job.fulltime_or_parttime}
+                  </button>
                 </div>
-                <div className="flex">
-                  <p>
-                    <LockOpenIcon /> {job.location}
+                <div className="flex gap-8 mb-8">
+                  <p className="flex items-center">
+                    <MapPinIcon className="w-4 h-4" /> {job.location}
                   </p>
-                  <p>Salary: {job.salary}</p>
+                  <p className="flex items-center">
+                    <CurrencyDollarIcon className="w-4 h-4 " /> {job.salary}
+                  </p>
                 </div>
-                <button className="my-button">View Details</button>
+                <button className="my-button ">View Details</button>
               </div>
             ))}
+          </div>
+          <div className='text-center mt-10'>
+            <button className="my-button">See All</button>
           </div>
         </div>
       </>
