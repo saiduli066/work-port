@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Statistics from './Components/Statistics/Statistics';
 import AppliedJobs from './Components/AplliedJobs/AppliedJobs';
 import Blog from './Components/Blog/Blog';
+import Error from './Components/Error/Error';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
+      {
+        path: '/*',
+        element:<Error/>
+      }
     ],
   },
 ]);
