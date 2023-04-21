@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import logo from "../../assets/All Images/P3OLGJ1 copy 1.png";
 import { CurrencyDollarIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
-const Home = () => {
-  // const {fetchedCategories,fetchedJobs} = useLoaderData();
-  // const { categories } = fetchedCategories;
-  // // console.log(categories);
 
-  // const { jobs } = fetchedJobs;
-  // console.log(jobs);
+
+
+const Home = () => {
   const { fetchedCategories, fetchedJobs } = useLoaderData();
   const { categories } = fetchedCategories;
-  console.log(categories);
+  // console.log(categories);
   const { jobs } = fetchedJobs;
-  console.log(jobs);
+  // console.log(jobs);
 
   const [showAllJobs, setShowAllJobs] = useState(false);
 
@@ -31,8 +28,7 @@ const Home = () => {
       <div className="flex flex-col md:flex-row items-center p-5 justify-evenly bg-gray-50">
         <div className="md:w-[45%]">
           <h1 className="text-4xl md:text-6xl font-semibold w-full mb-6">
-            One Step Closer To Your{" "}
-            <span className="text-sky-400">Dream Job</span>
+            One Step Closer To Your<span className="text-sky-400">Dream Job</span>
           </h1>
           <p className="text-center md:text-left mb-6">
             Explore thousands of job opportunities with all the information you

@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+
   const [showNavbar, setShowNavbar] = useState(false);
+  
+  const [isActive, setIsActive] = useState(false);
+
+  const handleNavActivity = () => {
+    setIsActive(true);
+  }
+
+  
   return (
     <nav className="flex flex-col lg:flex-row items-center lg:justify-around justify-between  bg-gray-50 px-4 py-3">
       <Link to="/">
@@ -22,29 +31,37 @@ const Header = () => {
         <ul className="lg:flex-grow lg:text-center lg:flex lg:justify-center">
           <NavLink
             to="/"
-            className="block mt-4 md:inline-block md:mt-0 md:mx-4 text-gray-400 hover:text-sky-600"
-            activeClassName="text-sky-600"
+            onClick={handleNavActivity}
+            className={`block mt-4 md:inline-block md:mt-0 md:mx-4 ${
+              isActive ? "text-sky-600" : "text-gray-400"
+            }`}
           >
             Home
           </NavLink>
           <NavLink
             to="/statistics"
-            className="block mt-4 md:inline-block md:mt-0 md:mx-4 text-gray-400 hover:text-sky-600"
-            activeClassName="text-sky-600"
+            onClick={handleNavActivity}
+            className={`block mt-4 md:inline-block md:mt-0 md:mx-4 ${
+              isActive ? "text-sky-600" : "text-gray-400"
+            }`}
           >
             Statistics
           </NavLink>
           <NavLink
             to="/applied-jobs"
-            className="block mt-4 md:inline-block md:mt-0 md:mx-4 text-gray-400 hover:text-sky-600"
-            activeClassName="text-sky-600"
+            onClick={handleNavActivity}
+            className={`block mt-4 md:inline-block md:mt-0 md:mx-4 ${
+              isActive ? "text-sky-600" : "text-gray-400"
+            }`}
           >
             Applied Jobs
           </NavLink>
           <NavLink
             to="/blog"
-            className="block mt-4 md:inline-block md:mt-0 md:mx-4 text-gray-400 hover:text-sky-600"
-            activeClassName="text-sky-600"
+            onClick={handleNavActivity}
+            className={`block mt-4 md:inline-block md:mt-0 md:mx-4 ${
+              isActive ? "text-sky-600" : "text-gray-400"
+            }`}
           >
             Blog
           </NavLink>
